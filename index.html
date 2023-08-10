@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Thailand Consumer Goods</title>
+</head>
+
+<body>
+
+  <div class="basket" onclick="showBasketModal()">
+      <img src="basket-icon.png" alt="Basket">
+      <span class="item-count">0</span>
+  </div>
+
+   <!-- Hamburger Menu -->
+   <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        &#9776; <!-- Hamburger icon -->
+      </div>
+      <div class="hamburger-dropdown" id="hamburgerDropdown">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="home" class="banner">
+        <img src="placeholder-banner.jpg" alt="Banner Image" />
+        <h1>Welcome to Thailand Consumer Goods</h1>
+        <p>Discover the uniqueness of Thai products.</p>
+    </section>
+
+
+  <section id="products" class="featured-products">
+      <h2>Featured Products</h2>
+
+
+  <!-- Shampoo Category Box -->
+    <div class="category-box" onclick="toggleProducts('shampoo')">
+      <h3>Shampoo</h3>
+    </div>
+
+    <div id="shampoo" class="products-list">
+        <table>
+          <tr>
+            <td>
+              <a href="product1-details.html"> <!-- Link to the product 1 details page -->
+                <img src="product1.jpg" alt="Product 1">
+                <h4>Product Name 1</h4>
+                <p>Retail Price: 80.000VND</p>
+              </a>
+              <button class="wholesale-btn">Contact for Wholesale Price</button>
+              <div class="product-amount" data-product="product1">
+                <button class="decrement" onclick="updateQuantity(event, 'decrease')">-</button>
+                <input type="number" value="0" min="0" id="product1-quantity">
+                <button class="increment" onclick="updateQuantity(event, 'increase')">+</button>
+            </div>
+          </td>
+              <!-- ... Repeat for all 10 products ... -->
+              <td>
+                <a href="product2-details.html"> <!-- Link to the product 1 details page -->
+                  <img src="product2.jpg" alt="Product 2">
+                  <h4>Product Name 2</h4>
+                  <p>Retail Price: 56.000VND</p>
+                </a>
+                <button class="wholesale-btn">Contact for Wholesale Price</button>
+                <div class="product-amount" data-product="product2">
+                  <button class="decrement" onclick="updateQuantity(event, 'decrease')">-</button>
+                  <input type="number" value="0" min="0" id="product2-quantity">
+                  <button class="increment" onclick="updateQuantity(event, 'increase')">+</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+    </div>
+
+    
+  <!-- Shower Gel Category Box -->
+  <div class="category-box" onclick="toggleProducts('showergel')">
+    <h3>Shower Gel</h3>
+  </div>
+  <div id="showergel" class="products-list">
+    <table>
+      <tr>
+        <td>
+          <a href="product3-details.html"> <!-- Link to the product 1 details page -->
+            <img src="product3.jpg" alt="Product 3">
+            <h4>Product Name 1</h4>
+            <p>Retail Price: 120.000VND</p>
+          </a>
+          <button class="wholesale-btn">Contact for Wholesale Price</button>
+          <div class="product-amount" data-product="product3">
+            <button class="decrement" onclick="updateQuantity(event, 'decrease')">-</button>
+            <input type="number" value="0" min="0" id="product3-quantity">
+            <button class="increment" onclick="updateQuantity(event, 'increase')">+</button>
+        </div>
+      </td>
+          <!-- ... Repeat for all 10 products ... -->
+          <td>
+            <a href="product4-details.html"> <!-- Link to the product 1 details page -->
+              <img src="product4.jpg" alt="Product 4">
+              <h4>Product Name 1</h4>
+              <p>Retail Price: 70.000VND</p>
+            </a>
+            <button class="wholesale-btn">Contact for Wholesale Price</button>
+            <div class="product-amount" data-product="product4">
+              <button class="decrement" onclick="updateQuantity(event, 'decrease')">-</button>
+              <input type="number" value="0" min="0" id="product4-quantity">
+              <button class="increment" onclick="updateQuantity(event, 'increase')">+</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </section>
+  
+  <section id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <img src="about-us.jpg" alt="About the company image">
+        <p>We are a company dedicated to bringing the best of Thai consumer goods to the world.</p>
+  </section>
+
+  <section id="blog" class="blog">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-post">
+            <img src="blog1.jpg" alt="Blog Post 1">
+            <h3>The Beauty of Thai Silk</h3>
+            <p>Discover the rich history and intricate details of Thai silk manufacturing.</p>
+            <a href="#">Read More</a>
+        </div>
+        <!-- Repeat for more blog posts -->
+  </section>
+
+  <section id="contact-us" class="contact-us">
+        <h2>Contact Us</h2>
+
+        <!-- Map Embedding -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14896.615332838433!2d105.8188759!3d21.028511!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x258de3c4f038a0a0!2sGiang%20V%C3%B5%20Lake!5e0!3m2!1sen!2sus!4v1637089837608!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <address>
+            321 Giang Vo, Cat Linh, Dong Da, Ha Noi
+        </address>
+        <p>Email: contact@thaigoods.com</p>
+        <p>Phone: 0913583572</p>
+        <form onsubmit="event.preventDefault(); showSuccessModal();">
+          <label for="name">Name and contact mobile phone:</label>
+            <input type="text" id="name" name="name">
+            <!-- ... Other fields ... -->
+            <input type="submit" value="Send Message">
+        </form>
+  </section>
+
+    <footer>
+        <p>&copy; 2023 Thailand Consumer Goods. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><img src="placeholder-facebook.jpg" alt="Facebook Link"></a>
+        </div>
+    </footer>
+
+    <!-- Basket Modal -->
+    <div id="basketModal" class="basket-modal">
+      <div class="basket-modal-content">
+          <span class="close-modal" onclick="closeModal()">&times;</span>
+          <h2>Selected Items</h2>
+          <table id="selectedItemsTable">
+              <thead>
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Table rows will be dynamically added here -->
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:1001;">
+      <div style="width:300px; margin:15% auto; padding:20px; border-radius:10px; background-color:#4CAF50; color:white; text-align:center;">
+        <p>Success!</p>
+        <p>We will contact you back shortly.</p>
+        <button onclick="closeSuccessModal()" style="margin-top:20px; padding:10px 20px; border:none; background-color:#388E3C; color:white; border-radius:5px; cursor:pointer;">OK</button>
+      </div>
+  </div>
+
+  <script>
+      
+      function toggleProducts(categoryId) {
+          const categoryDiv = document.getElementById(categoryId);
+          if (categoryDiv.style.display === 'block') {
+              categoryDiv.style.display = 'none';
+          } else {
+              categoryDiv.style.display = 'block';
+          }
+      }
+    
+
+      function showSuccessModal() {
+        const successModal = document.getElementById('successModal');
+        successModal.style.display = 'block';
+      }
+
+      function closeSuccessModal() {
+        const successModal = document.getElementById('successModal');
+        successModal.style.display = 'none';
+      }
+      function toggleMenu() {
+          const dropdown = document.getElementById('hamburgerDropdown');
+          dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      }
+
+      function showBasketModal() {
+          const basketModal = document.getElementById('basketModal');
+          const selectedItemsTableBody = document.querySelector('#selectedItemsTable tbody');
+          
+          selectedItemsTableBody.innerHTML = ''; // Clear existing items
+
+          let grandTotal = 0;
+
+          const quantityInputs = document.querySelectorAll('.product-amount input');
+          quantityInputs.forEach(input => {
+              const quantity = parseInt(input.value);
+              if (quantity > 0) {
+                  const productAmountDiv = input.parentElement;
+                  const productName = productAmountDiv.parentElement.querySelector('h4').textContent;
+                  
+                  const priceString = productAmountDiv.parentElement.querySelector('p').textContent;
+                  const priceValue = parseFloat(priceString.replace('Retail Price: ', '').replace('VND', '').replace('.', '').trim());
+            
+                  const totalForThisProduct = priceValue * quantity;
+                  grandTotal += totalForThisProduct;
+
+                  const newRow = document.createElement('tr');
+                  newRow.innerHTML = `<td>${productName}</td><td>${quantity}</td><td>${priceValue.toLocaleString()} VND</td><td>${totalForThisProduct.toLocaleString()} VND</td>`;
+                  selectedItemsTableBody.appendChild(newRow);
+              }
+          });
+
+          const footerRow = document.createElement('tr');
+          footerRow.innerHTML = `<td colspan="3">Grand Total</td><td>${grandTotal.toLocaleString()} VND</td>`;
+          selectedItemsTableBody.appendChild(footerRow);
+
+          basketModal.style.display = 'block';
+      }
+
+      // When clicking on the basket:
+         document.querySelector('.basket').addEventListener('click', showBasketModal);
+      
+
+      function closeModal() {
+          const basketModal = document.getElementById('basketModal');
+          basketModal.style.display = 'none';
+      }
+
+      // Basket Total Items
+      let totalItems = 0;
+
+      // Update Quantity Function
+      function updateQuantity(event, action) {
+          const productAmountDiv = event.target.parentElement;
+          const productId = productAmountDiv.getAttribute('data-product') + '-quantity';
+          const inputField = document.getElementById(productId);
+
+          let currentValue = parseInt(inputField.value);
+
+          if (action === 'increase') {
+              currentValue += 1;
+          } else if (action === 'decrease' && currentValue > 1) {
+              currentValue -= 1;
+          }
+
+          inputField.value = currentValue;
+
+          updateTotalItems();
+      }
+
+      // Update Total Items in Basket
+      function updateTotalItems() {
+          const quantityInputs = document.querySelectorAll('.product-amount input');
+          totalItems = 0;
+
+          quantityInputs.forEach(input => {
+              totalItems += parseInt(input.value);
+          });
+
+          const basketItemCount = document.querySelector('.item-count');
+          basketItemCount.textContent = totalItems;
+      }
+
+      // On Page Load, initialize the total count
+      window.onload = updateTotalItems;
+
+      
+  </script>
+
+<form action="send_email.php" method="post">
+  <label for="name">Name and contact mobile phone:</label>
+  <input type="text" id="name" name="name" required>
+  
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <input type="submit" value="Send Message">
+</form>
+
+
+</body>
+
+</html>
+
+ 
